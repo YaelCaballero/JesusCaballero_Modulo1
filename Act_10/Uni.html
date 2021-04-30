@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad</title>
+</head>
+<body>
+    <fieldset>
+    <form action="Uni.php" method="POST">
+            <legend>Solicitud de ingreso a la Universidad</legend>
+            <label> Nombre(s):
+                <input type="text" name="nom" required>
+            </label>
+            <br><br>
+            <label> Apellido paterno:
+                <input type="text" name="AP" required>
+            </label>
+            <br><br>
+            <label> Apellido Materno:
+                <input type="text" name="AM" required>
+            </label>
+            <br><br>
+            <label>Sexo: 
+                <label> Hombre
+                    <input type="radio" name="sexo" value="Hombre">
+                </label>
+                <label> Mujer
+                    <input type="radio" name="sexo" value="Mujer">
+                </label>
+                <label> Otro
+                    <input type="radio" name="sexo" value="Otro">
+                </label>
+            </label>
+            <br><br>
+            <label> Edad:
+                <input type="number" name="edad" min="17" max="100" required>
+            </label>
+            <br><br>
+            <label> Correo electrónico:  
+                <input type="email" name="CE" required>
+            </label>
+            <br><br>
+            <label> Teléfono: 
+                <input type="text" name="tel" maxlength="10" required>
+            </label>
+            <br><br>
+            <label> Celular: 
+                <input type="text" name="cel" maxlength="10" required>
+            </label>
+            <br><br>
+            <label> Escuela de procedencia: 
+            <select name="esc" required>
+                <option value="">Seleccione una opción</option>
+                <option value="ENP">Escuela Nacional Preparatoria</option>
+                <option value="CCH">Colegio de Ciencias y Humanidades</option>
+                <option value="otro">Otra</option>
+            </select>
+            </label>
+            <br><br>
+            <label> Promedio: 
+                <input type="number" name="prom" min="6" max="10" required>
+            </label>
+            <br><br>
+            <label> Primera opción: 
+                <input type="text" name="PO" required>
+            </label>
+            <br><br>
+            <label> Segunda opción: 
+                <input type="text" name="SO" required>
+            </label>
+            <br><br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
+    </form>
+    </fieldset>
+</body>
+</html>
