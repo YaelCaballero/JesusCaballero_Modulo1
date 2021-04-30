@@ -9,14 +9,12 @@
 <body>
 <table border="1">
     <?php
-    // la mayor parte de las variables que se utilizarán
     // "z" representa el número de filas y columnas que tendrá la tabla
         $z = 8;
     // "blanco" es la variable que agrega la imagen de la celda blanca y "negro" la imagen de la celda negra
         $blanco = "<img src=\"blanco.jpg\" width=\"50\" height=\"50\"";
         $negro = "<img src=\"negro.jpg\" width=\"50\" height=\"50\"";
     // "primerCuadroFila" declara el color de la primera celda de la fila. 
-    // En un inicio es blanca, respetando el orden de las celdas en los tableros del ajedrez
         $primerCuadroFila = $blanco;
     // Esta estructura de control iterativa forma el número de filas. Empieza desde la fila una hasta "z"
         for($i=1; $i<=$z; $i++) {
