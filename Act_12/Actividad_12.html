@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor morse</title>
+</head>
+<body>
+    <form action="Actividad_12.php" method="POST">
+        <fieldset>
+            <legend>Traductor morse</legend>
+            <select name="trans">
+                <option value="espMor">Español a morse</option>
+                <option value="morEsp">Morse a español</option>
+            </select>
+            <br><br>
+            <label>Introduce tu texto aquí <br>
+                <textarea name="texto" cols="76" rows="2" placeholder="Los espacios entre cada palabra en morse se representan con /" required></textarea>
+            </label>
+            <br>
+            <input type="submit" value="Traducir">
+        </fieldset>
+    </form>
+</body>
+</html>
