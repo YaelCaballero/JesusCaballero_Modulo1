@@ -16,11 +16,14 @@
         </label>
         <input type="submit" value="disparar">
     </form>
-    <table border="1">
+    <table border="1" style="text-align: center">
     <?php
         $coordX = (isset($_POST["coordX"]) && $_POST["coordX"] !="") ?$_POST["coordX"] : "No especificó";
         $coordY = (isset($_POST["coordY"]) && $_POST["coordY"] !="") ?$_POST["coordY"] : "No especificó";
         $coordX = strtoupper($coordX);
+        $coordenadas = [$coordX => $coordY];
+        var_dump($coordenadas);
+
         $valoresX = ["A","B","C","D","E","F","G","H","I","J"];
         $valoresY = ["1","2","3","4","5","6","7","8","9","10"];
         $z = 10;
