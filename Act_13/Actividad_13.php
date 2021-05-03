@@ -25,7 +25,29 @@
         var_dump($coordenadas);
 
         $valoresX = ["A","B","C","D","E","F","G","H","I","J"];
-        $valoresY = ["1","2","3","4","5","6","7","8","9","10"];
+        $valoresY = [1,2,3,4,5,6,7,8,9,10];
+
+        $cabezaX = rand(0,9);
+        $cabezaY = rand(0,9);
+        $vueltas = 0;
+        echo $cabezaY."<br>";
+        if ($cabezaY+5 <= 9) {
+            foreach ($valoresX as $numL => $letra) {
+                if ($cabezaX === $numL) {
+                    $lol = $letra;
+                }
+            }
+            foreach ($valoresY as $numN => $numero) {
+                if ($cabezaY === $numN) {
+                    while ($vueltas !== 4) {
+                        $vueltas++;
+                        $numero++;
+                        echo $lol.$numero;
+                    }
+                }
+            }
+        }
+
         $z = 10;
         $mar = "<img src=\"mar.jpg\" width=\"50\" height=\"50\"";
         $noBarco = "<img src=\"noBarco.jpg\" width=\"50\" height=\"50\"";
