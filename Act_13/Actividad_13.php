@@ -7,46 +7,11 @@
     <title>Batalla naval</title>
 </head>
 <body>
-    <form action="Actividad_13.php" method="POST">
-        <label>
-            <input type="text" name="coordX" placeholder="A-J">
-        </label>
-        <label>
-            <input type="text" name="coordY" placeholder="1-10">
-        </label>
-        <input type="submit" value="disparar">
-    </form>
     <table border="1" style="text-align: center">
     <?php
-        $coordX = (isset($_POST["coordX"]) && $_POST["coordX"] !="") ?$_POST["coordX"] : "No especificó";
-        $coordY = (isset($_POST["coordY"]) && $_POST["coordY"] !="") ?$_POST["coordY"] : "No especificó";
+        $coordX = (isset($_POST["coordX"]) && $_POST["coordX"] !="") ?$_POST["coordX"] : "@";
+        $coordY = (isset($_POST["coordY"]) && $_POST["coordY"] !="") ?$_POST["coordY"] : "@";
         $coordX = strtoupper($coordX);
-        $coordenadas = [$coordX => $coordY];
-        var_dump($coordenadas);
-
-        $valoresX = ["A","B","C","D","E","F","G","H","I","J"];
-        $valoresY = [1,2,3,4,5,6,7,8,9,10];
-
-        $cabezaX = rand(0,9);
-        $cabezaY = rand(0,9);
-        $vueltas = 0;
-        echo $cabezaY."<br>";
-        if ($cabezaY+5 <= 9) {
-            foreach ($valoresX as $numL => $letra) {
-                if ($cabezaX === $numL) {
-                    $lol = $letra;
-                }
-            }
-            foreach ($valoresY as $numN => $numero) {
-                if ($cabezaY === $numN) {
-                    while ($vueltas !== 4) {
-                        $vueltas++;
-                        $numero++;
-                        echo $lol.$numero;
-                    }
-                }
-            }
-        }
 
         $z = 10;
         $mar = "<img src=\"mar.jpg\" width=\"50\" height=\"50\"";
@@ -72,7 +37,113 @@
             }
             echo "</tr>";
         }
+
+        $valoresX = ["A","B","C","D","E","F","G","H","I","J"];
+        $valoresY = ["1","2","3","4","5","6","7","8","9","10"];
+
+        
+
+        do {
+            $barco3 = [];
+            $barco4 = [];
+                do {
+                    $cabezaX = rand(0,9);
+                    $cabezaY = rand(0,9);
+                    $vueltas = 0;
+                    echo $cabezaX."<br>";
+                    echo $cabezaY."<br>";
+
+                    if ($cabezaY+5 <= 9) {
+                        foreach ($valoresX as $numL => $letra) {
+                            if ($cabezaX === $numL) {
+                                $lol = $letra;
+                            }
+                        }
+                        foreach ($valoresY as $numN => $numero) {
+                            if ($cabezaY === $numN) {
+                                while ($vueltas !== 4) {
+                                    $vueltas++;
+                                    $numero++;
+                                    $barco4Cuerpo = $lol.$numero;
+                                    array_push($barco4, $barco4Cuerpo);
+                                }
+                            }
+                        }
+                    } elseif ($cabezaX+5 <= 9) {
+                        foreach ($valoresY as $numN => $numero) {
+                            if ($cabezaY === $numN) {
+                                $lol = $numero;
+                            }
+                        }
+                        foreach ($valoresX as $numL => $letra) {
+                            if ($cabezaX === $numL) {
+                                $letra = ord($letra);
+                                while ($vueltas !== 4) {
+                                    $vueltas++;
+                                    $letra++;
+                                    $barco4Cuerpo = chr($letra).$lol;
+                                    array_push($barco4, $barco4Cuerpo);
+                                }
+                            }
+                        }
+                    }
+                } while ($cabezaY > 4 && $cabezaX > 4);
+                do {
+                    $cabezaX = rand(0,9);
+                    $cabezaY = rand(0,9);
+                    $vueltas = 0;
+                    echo $cabezaX."<br>";
+                    echo $cabezaY."<br>";
+
+                    if ($cabezaX+6 <= 9) {
+                        foreach ($valoresY as $numN => $numero) {
+                            if ($cabezaY === $numN) {
+                                $lol = $numero;
+                            }
+                        }
+                        foreach ($valoresX as $numL => $letra) {
+                            if ($cabezaX === $numL) {
+                                $letra = ord($letra);
+                                while ($vueltas !== 3) {
+                                    $vueltas++;
+                                    $letra++;
+                                    $barco3Cuerpo = chr($letra).$lol;
+                                    array_push($barco3, $barco3Cuerpo);
+                                }
+                            }
+                        }
+                    } elseif ($cabezaY+6 <= 9) {
+                        foreach ($valoresX as $numL => $letra) {
+                            if ($cabezaX === $numL) {
+                                $lol = $letra;
+                            }
+                        }
+                        foreach ($valoresY as $numN => $numero) {
+                            if ($cabezaY === $numN) {
+                                while ($vueltas !== 3) {
+                                    $vueltas++;
+                                    $numero++;
+                                    $barco3Cuerpo = $lol.$numero;
+                                    array_push($barco3, $barco3Cuerpo);
+                                }
+                            }
+                        }
+                    }
+                } while ($cabezaY > 3 && $cabezaX > 3);
+                print_r($barco4);
+                print_r($barco3);
+                $XD = array_intersect($barco3, $barco4);
+        } while (array_key_exists(0, $XD));   
     ?>
     </table>
+    <form action="Actividad_13.php" method="POST">
+        <label>
+            <input type="text" name="coordX" placeholder="A-J" required>
+        </label>
+        <label>
+            <input type="text" name="coordY" placeholder="1-10" required>
+        </label>
+        <input type="submit" value="disparar">
+    </form>
 </body>
 </html>
