@@ -9,13 +9,24 @@
 <body>
     <table border="1">
     <?php
-        $z = 11;
+        $z = 10;
         $mar = "<img src=\"mar.jpg\" width=\"50\" height=\"50\"";
-        for($i=1; $i<=$z; $i++) {
+        for($i=0; $i<=$z; $i++) {
                 echo "<tr>";
-            for($j=1; $j<=$z; $j++) {
+            for($j=0; $j<=$z; $j++) {
                 echo "<td>";
-                echo $mar;
+                if (($i == 0)&&($j == 0)) {
+                    echo "&nbsp;";
+                } elseif ($j == 0) {
+                    echo $i;
+                } elseif ($i == 0) {
+                    $x = $j+96;
+                    $x = chr($x);
+                    $xU = strtoupper($x);
+                    echo $xU;
+                } else {
+                    echo $mar;
+                }
                 echo "</td>";
             }
             echo "</tr>";
