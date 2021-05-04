@@ -7,7 +7,7 @@
     <title>Batalla naval</title>
 </head>
 <body>
-    <form action="Actividad_13.php" method="POST">
+ /*   <form action="Actividad_13.php" method="POST">
         <label>
             <input type="text" name="coordX" placeholder="A-J">
         </label>
@@ -16,8 +16,9 @@
         </label>
         <input type="submit" value="disparar">
     </form>
-    <table border="1" style="text-align: center">
+    <table border="1" style="text-align: center"> */
     <?php
+
         $jugadas = isset($_POST["veces"])?$_POST["veces"]+1:0;
         $i=1;
         $nom2="cordes".$i;
@@ -29,7 +30,7 @@
                 $i++;
                 $nom2 = "cordes".$i;
             }
-        }    
+        }
         if(isset($_POST["coordX"]) && isset($_POST["coordY"]) && $jugadas > 0)
         {
             $coordX = $_POST["coordX"];
@@ -40,7 +41,7 @@
             $vidas = $_POST["vida"];
             $vidas--;
             var_dump($arr_coords);
-        }  
+        }
         else
         {
             $vidas = 10;
@@ -49,11 +50,11 @@
         $mar = "<img src='.\mar.jpg' width='50' height='50\'";
         echo "<h1>Batalla naval</h1><br><br>";
         echo "<h3>Vidas:</h3><table><tr>";
-        for($i=0; $i<$vidas; $i++)    
+        for($i=0; $i<$vidas; $i++)
         {
          echo "<th><img src='.\corazon.png' width='70' height='70'</th>";
-        } 
-        echo "</tr></table><br><br>"; 
+        }
+        echo "</tr></table><br><br>";
         echo "Historial de disparos:<br><br>";
         if($jugadas >= 1)
         {
