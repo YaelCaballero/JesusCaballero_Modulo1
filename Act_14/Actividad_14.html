@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form action="Actividad_14.php" method="POST">
+                    <fieldset>
+                        <legend>Reloj mundial</legend>
+                        <label for="">Ingrese hora (CDMX)
+                            <input type="time" name="hora">
+                        </label>
+                        <br>
+                        <h5>Elige los países que quieres consultar:</h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="NY">Nueva York:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="NY" name="ciudad[]" value="America/New_York">
+                                </td>
+                                <td>
+                                    <label for="SP">Sao Paulo:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="SP" name="ciudad[]" value="America/Sao_Paulo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="M">Madrid:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="M" name="ciudad[]" value="Europe/Madrid">
+                                </td>
+                                <td>
+                                    <label for="P">París:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="P" name="ciudad[]" value="Europe/Paris">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="R">Roma:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="R" name="ciudad[]" value="Europe/Rome">
+                                </td>
+                                <td>
+                                    <label for="A">Atenas:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="A" name="ciudad[]" value="Europe/Athens">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="S">Shanghai:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="S" name="ciudad[]" value="Asia/Shanghai">
+                                </td>
+                                <td>
+                                    <label for="T">Tokio:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="T" name="ciudad[]" value="Asia/Tokyo">
+                                </td>
+                            </tr>
+                         </table>
+                         <br>  
+                        <input type="submit" value="consultar">
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <form action="Actividad_14.php" method="POST">
+                    <fieldset>
+                        <legend>Calculadora de cumpleaños</legend>
+                        <label>Ingrese su fecha de nacimiento:
+                            <input type="date" name="cumple">
+                        </label>
+                        <h5>¿Qué quieres consultar?</h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="diasfalt">Días para próximo cumpleaños</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="preg[]" value="p1" id="diasfalt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="hfalt">Horas para próximo cumpleaños</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="preg[]" value="p2" id="hfalt">
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td>
+                                    <label for="minfalt">Minutos para próximo cumpleaños</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="preg[]" value="p3" id="minfalt">
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td>
+                                    <label for="fin">¿Será fin de semana?</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="preg[]" value="p4" id="fin">
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <input type="submit" value="calcular">
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
