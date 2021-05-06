@@ -276,5 +276,11 @@
 
     echo "</form>";
     ?>
+    <br>
+    <h4>Trabajo hecho por:</h4>
+    <ul>
+        <li>Caballero Antunez Jesús Yael</li>
+        <li>García Mojica Carlos Emiliano</li>
+    </ul>
 </body>
 </html>
