@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingrese una pintura</title>
+</head>
+<body>
+    <form action="Actividad_15.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Ingrese una pintura</legend>
+            <label>Nombre:
+                <input type="text" name="nombre">
+            </label><br><br>
+            <label>Autor:
+                <input type="text" name="autor">
+            </label><br><br>
+            <label>Año:
+                <input type="number" name="año">
+            </label><br><br>
+            <label>Seleccione la pintura a subir:
+                <input type="file" name="archivo">
+            </label><br><br>
+            <input type="submit" value="enviar">
+        </fieldset>
+    </form>
+</body>
+</html>
